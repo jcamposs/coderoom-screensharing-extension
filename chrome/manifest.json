@@ -1,0 +1,31 @@
+{
+  "name": " CodeRoom Screen Sharing",
+  "description": "Screen sharing utility for getscreenmedia",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "minimum_chrome_version": "34",
+  "icons": {
+  },
+  "permissions": [
+    "desktopCapture"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "icons": {
+    "16": "icons/16x16.png",
+    "48": "icons/48x48.png",
+    "128": "icons/128x128.png"
+  },
+  "content_scripts": [ {
+    "js": [ "content.js" ],
+    "matches": ["https://pre-coderoom.herokuapp.com/*",
+                "http://127.0.0.1:3000/*",
+                "http://localhost:3000/*"]
+  }],
+  "externally_connectable": {
+    "matches": ["https://pre-coderoom.herokuapp.com/*",
+                "http://127.0.0.1:3000/*",
+                "http://localhost:3000/*"]
+  }
+}
